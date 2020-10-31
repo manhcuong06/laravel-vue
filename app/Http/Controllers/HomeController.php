@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Excel;
+
 class HomeController extends Controller
 {
     public function index()
@@ -11,6 +13,8 @@ class HomeController extends Controller
 
         $collection = self::generateCollection();
         $fileName = 'export-' . time() . '.xlsx';
+        $path = storage_path('app/public/' . $fileName);
+        Excel::export($collection, $path);
 
         $messages[] = self::getMemoryUsage();
 
