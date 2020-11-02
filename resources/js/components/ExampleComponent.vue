@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-      header: 'My Header',
+      header: 'v-model example',
       body: 'My Body',
     };
   },
